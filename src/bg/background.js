@@ -17,15 +17,15 @@ async function checkLive() {
 }
 
 function localStoreGet(cb) {
-  chrome.storage.local.get([STORAGE_ID], function (result) {
-    if (result.key != true && result.key != false) {
-      result.key = false;
+  chrome.storage.local.get("STORAGE_ID", function (result) {
+    if (result.STORAGE_ID != true && result.STORAGE_ID != false) {
+      result.STORAGE_ID = false;
     }
-    cb(result.key);
+    cb(result.STORAGE_ID);
   });
 }
 function localStoreSet(value) {
-  chrome.storage.local.set({ STORAGE_ID: value });
+  chrome.storage.local.set({ "STORAGE_ID": value });
 }
 
 function notify() {
