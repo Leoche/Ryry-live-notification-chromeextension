@@ -1,6 +1,6 @@
 {
   "name": "Ryu7z Live Notification",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Crée une notification lorsque Ryu7z est en live.",
   "homepage_url": "https://leodesigaux.com/",
@@ -19,6 +19,7 @@
   "permissions": [
     "notifications",
     "storage",
+    "alarms",
     "https://www.youtube.com/*"
   ]
 }

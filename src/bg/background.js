@@ -47,15 +47,23 @@ chrome.notifications.onClicked.addListener(function (notificationId) {
 
 function run() {
   let isLiveStored = null;
+  console.log("R is running")
   localStoreGet(function (result) {
     isLiveStored = result;
+    console.log("isLiveStored = " + isLiveStored)
   });
   checkLive().then((isLive) => {
+    console.log("isLive = " + isLiveStored)
     if (isLive && !isLiveStored) {
+        console.log("need to notify ...")
       notify();
     }
     localStoreSet(isLive);
   });
 }
 
-setInterval(run, 300000);
+chrome.alarms.create(NOTIFICATION_ID, {delayInMinutes: 1, periodInMinutes: 5});
+chrome.alarms.onAlarm.addListener(function( alarm ) {
+  run();
+});
+run();
