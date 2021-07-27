@@ -33,7 +33,7 @@ function notify() {
     type: "basic",
     iconUrl: DARK_MODE ? "images/logo_dark.png" : "images/logo_white.png",
     title: "Ryu7z est en LIVE!",
-    message: "Cliquer ici pour regarder le live.",
+    message: "Cliquez ici pour regarder le live.",
     priority: 2,
   });
 }
